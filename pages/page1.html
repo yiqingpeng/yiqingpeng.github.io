@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- possible content values: default, black or black-translucent -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#3687F7">
+        <title>Page 1</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <link rel="shortcut icon" href="icons/icon48.png" />
+        <link rel="manifest" href="manifest.json">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <style>
+        *{margin:0px;padding:0px;border:none;border-radius:0px;}
+        img{outline:none;display:block;}
+        body{background:#ffffff;}
+        ul{list-style:none;}
+        ul li{display:block;}
+        
+        .main{}
+        .section{position:relative;}
+        .section .bg-image{width:100%;height:auto;}
+        
+        .layer{position:absolute;z-index:2;box-sizing:border-box;overflow:hidden;}
+        
+        .notice{top:29%;left:20%;color:black;height:25px;line-height:25px;width:71%;}
+        
+        .notice ul li{height:25px;font-size:12px;font-weight:500;}
+        
+        .op{top:20%;left:46%;width:54%;display:flex;padding-right:20px;}
+        .op-left, op-right{flex:1;}
+        
+        .refresh-img{width:12px;height:auto;display:inline-block;vertical-align:middle;margin-left:5px;}
+        
+        .digit{top:55%;left:6%;}
+        
+        .rotate{transform:rotate(360deg);}
+        
+        .footer{position:fixed;bottom:0;left:0;background:#ffffff;z-index:999;}
+        .footer img{width:100%;height:100%;}
+        @media (display-mode: standalone), (display-mode: fullscreen) {
+            *{user-select: none/*禁止文本被选择*/;}
+            body{overscroll-behavior-y: contain/*禁止移动端下拉刷新*/;}
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="section"><img class="bg-image" src="./page1_bg_1.jpg"></div>
+            <div class="section">
+                <img class="bg-image" src="./page1_bg_2.jpg">
+                <div class="layer notice" id="notice">
+                    <ul>
+                    <li>关于上线个人外汇买卖协议和个人信息...</li>
+                    <li>关于调整部分代销公募基金产品风险等...</li>
+                    <li>关于银行函证业务受理的公告</li>
+                    <li>所有制银行关于完善存量个人住房贷款...</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <img class="bg-image" src="./page1_bg_3.jpg">
+                <div class="layer op">
+                    <div class="op-left" style="padding-top:5px;"><a href="javascript:switchM();"><img class="eye-image" style="width:16px;height:auto;vertical-align:middle;" src="./eye-close.jpg"></a></div>
+                    <div class="op-right"><span class="time-box" style="color:#7E8492;font-size:10px;"></span><a href="javascript:showTime();" ><img src="./refresh.jpg" class="refresh-img" onclick="rotateMe(this)"></a></div>
+                </div>
+                
+                <div class="layer digit"><span style="font-size:15px;font-weight:400;">******</span><span style="font-size:20px;font-family:Arial;font-weight:500;"></span></div>
+            </div>
+            <div class="section">
+                <img class="bg-image" src="./page1_bg_4.jpg">
+            </div>
+        </div>
+        <div class="footer">
+            <img src="./page1_bg_5.jpg">
+        </div>
+        <script type="text/javascript">
+        showTime();
+        function showTime(){
+            var dt = new Date();
+            var m = dt.getMonth() + 1;
+            var d = dt.getDate().toString().padStart(2, '0');
+            var h = dt.getHours().toString().padStart(2, '0');
+            var mn = dt.getMinutes().toString().padStart(2, '0');
+            var s = dt.getSeconds().toString().padStart(2, '0');
+            $('.time-box').text(m+'-'+d+' '+h+':'+mn+':'+s);
+        }
+        
+        function rotateMe(me){
+            $(me).animate({rotate:"360deg"}, 1000, function (){$(this).removeAttr('style');});
+        }
+        
+        function switchM(){
+            if ($('.digit span').first('span').text() == '******') {
+                $('.digit span').first('span').text('￥');
+                $('.digit span').last('span').text('4,151,370.96');
+                $('.eye-image').prop('src', './eye-open.jpg');
+            } else {
+                $('.digit span').first('span').text('******');
+                $('.digit span').last('span').text('');
+                $('.eye-image').prop('src', './eye-close.jpg');
+            }
+        }
+        function AutoScroll(obj){
+            $(obj).find("ul:first").animate({
+                marginTop:"-25px"
+            },500,function(){
+                $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+            });
+        }
+        $(document).ready(function(){
+            setInterval('AutoScroll("#notice")',3000);
+        });
+        </script>
+    </body>
+</html>
