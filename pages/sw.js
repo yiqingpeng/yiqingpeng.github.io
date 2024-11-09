@@ -4,14 +4,18 @@
  
 var CACHE_NAME = 'webui-cache-v1';
 var INITIAL_RESOURCES_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/error.html',
-    '/images/alipay.svg',
-    '/images/paypal.svg',
-    '/images/wechat.svg',
-    '/images/wechat_pay.png',
-    '/js/app.js'
+    './',
+    './index.html',
+    './error.html',
+    './page1.html',
+    './eye-close.jpg',
+    './eye-open.jpg',
+    './refresh.jpg',
+    './page1_bg_1.jpg',
+    './page1_bg_2.jpg',
+    './page1_bg_3.jpg',
+    './page1_bg_4.jpg',
+    './page1_bg_5.jpg',
 ];
 
 // On install, fill the cache with the initial resources.
