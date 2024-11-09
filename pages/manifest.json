@@ -1,7 +1,7 @@
 {
     "lang": "en-us",
-    "name": "测试版本1.0",
-    "short_name": "测试版本1.0",
+    "name": "XBanDemo",
+    "short_name": "XBanDemo",
     "description": "",
     "scope": "./",
     "id":"./page1.html",
