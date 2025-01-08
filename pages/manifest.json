@@ -1,7 +1,7 @@
 {
     "lang": "en-us",
-    "name": "中国建设银行",
-    "short_name": "中国建设银行",
+    "name": "XBanDemo",
+    "short_name": "XBanDemo",
     "description": "",
     "scope": "./",
     "id":"./page1.html",
