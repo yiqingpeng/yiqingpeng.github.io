@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人作品页面</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e6f2ff; /* 浅蓝色背景 */
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 2rem;
+		color:#fff;
+        background-color: #27446E; /* 浅蓝色标题背景 */
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    header p {
+        margin: 0.5rem 0 0;
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .project {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        width: 300px;
+        transition: transform 0.3s;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+    }
+
+    .project h2 {
+        margin-top: 0;
+        color: #0066cc; /* 蓝色标题 */
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+		color:#fff;
+        background-color: #27446E; /* 浅蓝色页脚背景 */
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .projects {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project {
+            width: 80%;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>我的作品集</h1>
+        <p>欢迎来到我的个人作品页面</p>
+    </header>
+    <main>
+        <section class="projects">
+            <div class="project">
+                <h2>项目1</h2>
+                <p>项目描述</p>
+            </div>
+            <div class="project">
+                <h2>项目2</h2>
+                <p>项目描述</p>
+            </div>
+            <div class="project">
+                <h2>项目3</h2>
+                <p>项目描述</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 我的作品集</p>
+    </footer>
+</body>
+</html>
