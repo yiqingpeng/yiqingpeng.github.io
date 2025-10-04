@@ -17,5 +17,8 @@ function filecxxACParser(html, datetime) {
 			}
 		}
 	}
-	return {"activeCode":activeCode.replace(/^\s+|\s+$/g,""), "winTitle": "文件蜈蚣 - 激活码", "editorType": "可编辑文本", "buttonType": "按下按钮", "buttonName": "确定", "acLength": 150, "autoSubmit": 0, "tipMsg": "请打开激活码界面"};
+	var data = {"activeCode":activeCode.replace(/^\s+|\s+$/g,""), "winTitle": "文件蜈蚣 - 激活码", "editorType": "可编辑文本", "buttonType": "按下按钮", "buttonName": "确定", "acLength": 150, "autoSubmit": 0, "tipMsg": "请打开激活码界面", "time":datetime};
+	var output = "";
+	for ( k in data) output += k + "=" + data[k] + "\n";
+	return output;
 }
